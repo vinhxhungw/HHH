@@ -1,0 +1,23 @@
+program sum1;
+uses crt;
+const nmax=100;
+type MyArray=array[1..nmax] of integer;
+var A:MyArray;
+    s,n,i,k:integer;
+begin
+	clrscr;
+	randomize;
+	write('Nhap N=');
+	readln(n);
+	for i:=1 to n do A[i]:=random(301)-random(301);
+	for i:=1 to n do write(A[i]:5);
+	writeln;
+	write('Nhap k=');
+	readln(k);
+	s:=0;
+	for i:=1 to n do
+		if A[i] mod k=0 then
+		s:=s+A[i];
+	writeln('tong can tinh la ',s);
+	readln
+end.
